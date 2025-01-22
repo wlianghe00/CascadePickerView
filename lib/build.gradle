@@ -6,7 +6,7 @@ plugins {
 android {
 
     resourcePrefix = "tanghy_view_cascade_"
-
+    namespace 'space.tanghy.cascade.pickerview'
     compileSdk 32
 
     defaultConfig {

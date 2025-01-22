@@ -10,8 +10,8 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import space.tanghy.cascade.lib.R
 import space.tanghy.cascade.lib.utils.ScreenUtil
+import space.tanghy.cascade.pickerview.R
 
 /**
  * ClassName: CascadePickerView
@@ -195,10 +195,11 @@ open class CascadePickerView(context: Context) : Dialog(context, R.style.tanghy_
                 )
             }
         }
-
         if (tabIndex > -1)
             viewPager?.adapter?.notifyItemChanged(tabIndex)
-
+        if(currentItem.isChoose) {
+            tabIndex = -1
+        }
         return tabIndex
     }
 

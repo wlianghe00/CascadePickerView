@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import space.tanghy.cascade.lib.R
+import space.tanghy.cascade.pickerview.R
 
 /**
  * ClassName: ItemView

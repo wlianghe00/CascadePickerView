@@ -10,5 +10,6 @@ data class Item(
     val name: String,
     val value: Any,
     val children: MutableList<Item>? = null,
-    var isCheck:Boolean = false
+    var isCheck:Boolean = false,
+    var isChoose:Boolean = false,
 )

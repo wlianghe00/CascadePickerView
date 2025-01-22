@@ -2,9 +2,10 @@ package space.tanghy.cascade.lib.dialog
 
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import space.tanghy.cascade.lib.R
+import space.tanghy.cascade.pickerview.R
 
 /**
  * ClassName: CascadeAdapter
@@ -43,6 +44,20 @@ class ItemAdapter(var dataSet: MutableList<Item>, private val callback: (Item) -
             notifyItemChanged(position)
             callback.invoke(dataSet[position])
         }
+
+        holder.cascadeView.checkClick(object : OnClickListener{
+            override fun onClick(v: View?) {
+                if (currentItem != null) {
+                    currentItem!!.item.isCheck = false
+                    notifyItemChanged(currentItem!!.index)
+                }
+                currentItem = SelectItem(dataSet[position],position)
+                currentItem!!.item.isCheck = true
+                currentItem!!.item.isChoose = true;
+                notifyItemChanged(position)
+                callback.invoke(dataSet[position])
+            }
+        })
     }
 
     override fun getItemCount() = dataSet.size

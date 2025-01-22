@@ -1,9 +1,10 @@
 package space.tanghy.cascade.lib.dialog
 
 import android.view.View
+import android.view.View.OnClickListener
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
-import space.tanghy.cascade.lib.R
+import space.tanghy.cascade.pickerview.R
 
 /**
  * ClassName: ItemView
@@ -15,6 +16,7 @@ class ItemView(val view: View) {
 
     private val labelView: AppCompatTextView = view.findViewById(R.id.label)
     private val imageView: AppCompatImageView = view.findViewById(R.id.image)
+    private val tvCheck: AppCompatTextView = view.findViewById(R.id.tv_check);
     var item: Item? = null
 
     fun bind(item: Item) {
@@ -25,6 +27,10 @@ class ItemView(val view: View) {
         } else {
             imageView.visibility = View.VISIBLE
         }
+    }
+
+    fun checkClick(listener: OnClickListener) {
+        tvCheck.setOnClickListener(listener)
     }
 
 }

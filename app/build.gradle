@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdk 32
-
+    namespace 'space.tanghy.cascade.pickerview'
     defaultConfig {
         applicationId "space.tanghy.cascade.pickerview"
         minSdk 21
